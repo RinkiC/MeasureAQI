@@ -2,12 +2,12 @@
 name: india_air_quality_json
 
 # Controls when the workflow will run
-on:
-   #Triggers the workflow on push or pull request events but only for the main branch
-    workflow_dispatch:
 #on:
-#  schedule:
- #    - cron: '45 * * * *'  # Runs every 45th min
+   #Triggers the workflow on push or pull request events but only for the main branch
+    #workflow_dispatch:
+on:
+  schedule:
+     - cron: '45 * * * *'  # Runs every 45th min
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
