@@ -3,13 +3,26 @@ import streamlit as st
 import pandas as pd
 from decimal import Decimal
 from snowflake.snowpark.context import get_active_session
+from snowflake.snowpark import Session
+
+connection_parameters = {
+       "ACCOUNT":"cc25614",
+       "region":"ap-southeast-1",
+        "USER":"RINKICHAUHAN",
+        "PASSWORD":"Parth!999",
+        "ROLE":"SYSADMIN",
+       "DATABASE": "DEV_DB",
+        "SCHEMA": "STAGE_SCH",
+        "WAREHOUSE":"ADHOC_WH"
+    }
 
 # Page Title
 st.title("Air Quality Trend - At Station Level")
 st.write("This streamlit app hosted on Snowflake")
 
 # Get Session
-session = get_active_session()
+session = Session.builder.configs(connection_parameters).create()
+#session = get_active_session()
 
 state_option,city_option, station_option, date_option  = '','','',''
 state_query = """
