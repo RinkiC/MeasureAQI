@@ -4,7 +4,7 @@ from decimal import Decimal
 from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark import Session
 
- connection_parameters = {
+connection_parameters = {
        "ACCOUNT":"cc25614",
        "region":"ap-southeast-1",
         "USER":"RINKICHAUHAN",
